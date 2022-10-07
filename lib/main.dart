@@ -26,13 +26,20 @@ class RootPage extends StatefulWidget {
 class _RootPageState extends State<RootPage> {
   int selectedIndex = 0;
 
+  final pages = [
+    const Center(child: Text("Home")),
+    const Center(child: Text("User")),
+    const Center(child: Text("Buy")),
+    const Center(child: Text("Settings"))
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Bottom Navigation"),
       ),
-      body: Container(),
+      body: pages[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         type: BottomNavigationBarType.shifting,
